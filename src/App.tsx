@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
+import Footer from "./components/Footer";
 
 interface Task {
   id: number;
@@ -63,30 +64,33 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="container">
-      <h1>Todo List</h1>
-      <div className="task-form">
-        <TaskForm onAdd={addTask} />
+    <>
+      <div className="container">
+        <h1>Todo List</h1>
+        <div className="task-form">
+          <TaskForm onAdd={addTask} />
+        </div>
+        <div>
+          <select
+            value={priorityFilter}
+            onChange={(e) => setPriorityFilter(e.target.value)}
+          >
+            <option value="all">All Priorities</option>
+            <option value="low">Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+          <div className="task-list"></div>
+          <TaskList
+            tasks={filteredTasks}
+            onDelete={deleteTask}
+            onToggle={toggleTask}
+            onEdit={editTask}
+          />
+        </div>
       </div>
-      <div>
-        <select
-          value={priorityFilter}
-          onChange={(e) => setPriorityFilter(e.target.value)}
-        >
-          <option value="all">All Priorities</option>
-          <option value="low">Low Priority</option>
-          <option value="medium">Medium Priority</option>
-          <option value="high">High Priority</option>
-        </select>
-        <div className="task-list"></div>
-        <TaskList
-          tasks={filteredTasks}
-          onDelete={deleteTask}
-          onToggle={toggleTask}
-          onEdit={editTask}
-        />
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 
