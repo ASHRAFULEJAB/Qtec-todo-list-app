@@ -98,6 +98,24 @@
   background-color: #0056b3;
 }
 
+/* priority color */
+
+.low-priority {
+ color: rgb(23, 173, 23);
+ font-weight: bolder;
+}
+
+.medium-priority {
+  color: rgb(161, 187, 34); 
+  font-weight: bolder;
+}
+
+.high-priority {
+  color: rgb(228, 36, 36); 
+  font-weight: bolder;
+}
+
+
 /* responsive design */
 @media screen and (min-width: 768px) {
   .task-container {
