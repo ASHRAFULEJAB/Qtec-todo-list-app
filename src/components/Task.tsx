@@ -22,17 +22,19 @@ const Task: React.FC<TaskProps> = ({ task, onDelete, onToggle, onEdit }) => {
   };
 
   return (
-    <div className={`task ${task.completed ? "completed" : ""}`}>
-      <h3>{task.name}</h3>
-      <p>Priority: {task.priority}</p>
-      <p>Status: {task.completed ? "Completed" : "Not Completed"}</p>
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => onToggle(task.id)}
-      />
-      <button onClick={() => onDelete(task.id)}>Delete</button>
-      <button onClick={handleEdit}>Edit</button>
+    <div className={`task-list ${task.completed ? "completed" : ""}`}>
+      <div className="task">
+        <h3>{task.name}</h3>
+        <p>Priority: {task.priority}</p>
+        <p>Status: {task.completed ? "Completed" : "Not Completed"}</p>
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => onToggle(task.id)}
+        />
+        <button onClick={() => onDelete(task.id)}>Delete</button>
+        <button onClick={handleEdit}>Edit</button>
+      </div>
     </div>
   );
 };

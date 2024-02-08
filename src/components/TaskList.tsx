@@ -14,7 +14,7 @@ interface TaskListProps {
     taskId: number,
     newName: string,
     newPriority: string
-  ) => void | undefined; // Make onEdit prop optional
+  ) => void | undefined;
 }
 
 const TaskList: React.FC<TaskListProps> = ({
@@ -28,17 +28,19 @@ const TaskList: React.FC<TaskListProps> = ({
 
   return (
     <div>
-      <div>Total Tasks: {totalTasks}</div>
-      <div>Completed Tasks: {completedTasks}</div>
-      {tasks.map((task) => (
-        <Task
-          key={task.id}
-          task={task}
-          onDelete={onDelete}
-          onToggle={onToggle}
-          onEdit={onEdit} // Pass onEdit function to Task component
-        />
-      ))}
+      <div className="task-total">Total Tasks: {totalTasks}</div>
+      <div className="task-total">Completed Tasks: {completedTasks}</div>
+      <div className="task-container">
+        {tasks.map((task) => (
+          <Task
+            key={task.id}
+            task={task}
+            onDelete={onDelete}
+            onToggle={onToggle}
+            onEdit={onEdit}
+          />
+        ))}
+      </div>
     </div>
   );
 };

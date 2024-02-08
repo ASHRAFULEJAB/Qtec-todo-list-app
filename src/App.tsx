@@ -1,3 +1,4 @@
+// App.tsx
 import React, { useState } from "react";
 import "./App.css";
 import TaskForm from "./components/TaskForm";
@@ -29,11 +30,7 @@ function App(): JSX.Element {
     );
   };
 
-  const editTask = (
-    id: number,
-    newName: string,
-    newPriority: string
-  ): void => {
+  const editTask = (id: number, newName: string, newPriority: string): void => {
     setTasks(
       tasks.map((task) =>
         task.id === id
@@ -44,15 +41,19 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>Todo List</h1>
-      <TaskForm onAdd={addTask} />
-      <TaskList
-        tasks={tasks}
-        onDelete={deleteTask}
-        onToggle={toggleTask}
-        onEdit={editTask}
-      />
+      <div className="task-form">
+        <TaskForm onAdd={addTask} />
+      </div>
+      <div className="task-list">
+        <TaskList
+          tasks={tasks}
+          onDelete={deleteTask}
+          onToggle={toggleTask}
+          onEdit={editTask}
+        />
+      </div>
     </div>
   );
 }
