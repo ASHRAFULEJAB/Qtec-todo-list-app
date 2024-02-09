@@ -1,6 +1,6 @@
 # Todo List App
 
-![Todo List](https://ibb.co/hFndprP)
+[Todo List](https://ibb.co/hFndprP)
 
 A simple web application for managing your daily tasks. Keep track of your tasks, mark them as completed, and prioritize them based on their importance.
 
@@ -29,9 +29,9 @@ The Todo List App is a web-based task management tool designed to help users org
 
 ## Demo
 
-Check out the live demo of the Todo List App [here](#).
+Check out the live demo of the Todo List App [here](https://app-todo-listt.netlify.app/).
 
-![Todo List Demo](https://app-todo-listt.netlify.app/)
+![Todo List Demo](todo-list-demo.gif)
 
 ## Installation
 
