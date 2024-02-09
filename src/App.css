@@ -29,7 +29,6 @@ body {
 .task-form select {
   width: 94%;
   padding: 10px;
-
   margin-bottom: 10px;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -126,7 +125,7 @@ body {
   }
 }
 .footer {
-  margin-top: 285px;
+  margin-top: 283px;
   width: 100%;
   margin-bottom: 0;
   margin-left: 0;

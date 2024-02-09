@@ -1,23 +1,8 @@
-import React from "react";
+import { FunctionComponent } from "react";
+import { TaskListProps } from "../types/task.type";
 import Task from "./Task";
 
-interface TaskListProps {
-  tasks: {
-    id: number;
-    name: string;
-    priority: string;
-    completed: boolean;
-  }[];
-  onDelete: (taskId: number) => void;
-  onToggle: (taskId: number) => void;
-  onEdit?: (
-    taskId: number,
-    newName: string,
-    newPriority: string
-  ) => void | undefined;
-}
-
-const TaskList: React.FC<TaskListProps> = ({
+const TaskList: FunctionComponent<TaskListProps> = ({
   tasks,
   onDelete,
   onToggle,

@@ -1,10 +1,7 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
+import { TaskFormProps } from "../types/task.type";
 
-interface TaskFormProps {
-  onAdd: (task: { name: string; priority: string }) => void;
-}
-
-const TaskForm: React.FC<TaskFormProps> = ({ onAdd }) => {
+const TaskForm: FunctionComponent<TaskFormProps> = ({ onAdd }) => {
   const [name, setName] = useState<string>("");
   const [priority, setPriority] = useState<string>("low");
 

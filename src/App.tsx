@@ -3,18 +3,17 @@ import "./App.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
+import { Task, addTask } from "./types/task.type";
 
-interface Task {
-  id: number;
-  name: string;
-  priority: string;
-  completed: boolean;
-}
-
-function App(): JSX.Element {
+const App = (): JSX.Element => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [filteredTasks, setFilteredTasks] = useState<Task[]>([]);
   const [priorityFilter, setPriorityFilter] = useState<string>("all");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    filterTasksByPriority(priorityFilter);
+  }, [tasks, priorityFilter]);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
@@ -22,12 +21,7 @@ function App(): JSX.Element {
     setFilteredTasks(storedTasks);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    filterTasksByPriority(priorityFilter);
-  }, [tasks, priorityFilter]);
-
-  const addTask = (task: { name: string; priority: string }): void => {
+  const addTask = (task: addTask): void => {
     const newTask: Task = { id: Date.now(), ...task, completed: false };
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
@@ -92,6 +86,6 @@ function App(): JSX.Element {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

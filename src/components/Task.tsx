@@ -1,18 +1,12 @@
-import React from "react";
+import { FunctionComponent } from "react";
+import { TaskProps } from "../types/task.type";
 
-interface TaskProps {
-  task: {
-    id: number;
-    name: string;
-    priority: string;
-    completed: boolean;
-  };
-  onDelete: (taskId: number) => void;
-  onToggle: (taskId: number) => void;
-  onEdit: (taskId: number, newName: string, newPriority: string) => void;
-}
-
-const Task: React.FC<TaskProps> = ({ task, onDelete, onToggle, onEdit }) => {
+const Task: FunctionComponent<TaskProps> = ({
+  task,
+  onDelete,
+  onToggle,
+  onEdit,
+}) => {
   let priorityClass = "";
   switch (task.priority.toLowerCase()) {
     case "low":
