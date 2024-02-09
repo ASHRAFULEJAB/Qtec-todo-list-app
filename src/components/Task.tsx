@@ -24,7 +24,7 @@ const Task: FunctionComponent<TaskProps> = ({
   const handleEdit = () => {
     const newName = prompt("Enter new task name:", task.name);
     const newPriority = prompt("Enter new task priority:", task.priority);
-    if (newName && newPriority) {
+    if (newName !== null && newPriority !== null && onEdit) {
       onEdit(task.id, newName, newPriority);
     }
   };

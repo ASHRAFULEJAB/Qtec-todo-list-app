@@ -14,7 +14,7 @@ export type TaskProps = {
   };
   onDelete: (taskId: number) => void;
   onToggle: (taskId: number) => void;
-  onEdit: (taskId: number, newName: string, newPriority: string) => void;
+  onEdit?: (taskId: number, newName: string, newPriority: string) => void;
 };
 
 export interface TaskFormProps {

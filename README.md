@@ -1,6 +1,6 @@
 # Todo List App
 
-![Todo List](todo-list-screenshot.png)
+![Todo List](todo.png)
 
 A simple web application for managing your daily tasks. Keep track of your tasks, mark them as completed, and prioritize them based on their importance.
 
@@ -39,8 +39,10 @@ To run the Todo List App locally, follow these steps:
 
 1. run this command:
 
-   ```npm run dev
-   ```
+```
+npm run dev
+
+```
 
 ## Usage
 
