@@ -20,16 +20,16 @@ const App = (): JSX.Element => {
     setTasks(storedTasks);
     setFilteredTasks(storedTasks);
   }, []);
-
+  // add task functionality here
   const addTask = (task: addTask): void => {
     const newTask: Task = { id: Date.now(), ...task, completed: false };
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
-
+  // delete functionality here
   const deleteTask = (id: number): void => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
-
+  // toggle task functionality here
   const toggleTask = (id: number): void => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -37,7 +37,7 @@ const App = (): JSX.Element => {
       )
     );
   };
-
+  // Edit task functionality here
   const editTask = (id: number, newName: string, newPriority: string): void => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -47,6 +47,7 @@ const App = (): JSX.Element => {
       )
     );
   };
+  // filtering functionality here
 
   const filterTasksByPriority = (priority: string): void => {
     if (priority === "all") {

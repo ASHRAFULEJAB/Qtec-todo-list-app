@@ -118,12 +118,6 @@ body {
   font-weight: bolder;
 }
 
-/* responsive design */
-@media screen and (min-width: 768px) {
-  .task-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .footer {
   margin-top: 283px;
   width: 100%;
@@ -133,13 +127,19 @@ body {
   text-align: center;
   background-color: #f0ecec;
 }
+/* responsive design */
+@media screen and (min-width: 768px) {
+  .task-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 768px) {
   .footer {
-    margin-top: 500px; 
+    margin-top: 500px;
   }
 }
 @media screen and (min-width: 1200px) {
   .footer {
-    margin-top: 315px; 
+    margin-top: 315px;
   }
 }
